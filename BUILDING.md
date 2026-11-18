@@ -12,7 +12,7 @@ From the repository root, run:
 
 ```sh
 sudo apt update
-sudo apt install -y live-build
+sudo apt install -y git live-build python3
 sh scripts/build.sh
 ```
 
