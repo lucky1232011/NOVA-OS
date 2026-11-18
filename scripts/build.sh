@@ -13,8 +13,8 @@ if [ ! -r /etc/os-release ]; then
     exit 1
 fi
 . /etc/os-release
-if [ "${ID:-}" != debian ] || [ "${VERSION_CODENAME:-}" != bookworm ]; then
-    echo "This build is configured for Debian 12 (Bookworm)." >&2
+if [ "${ID:-}" != debian ] || { [ "${VERSION_CODENAME:-}" != bookworm ] && [ "${VERSION_CODENAME:-}" != trixie ]; }; then
+    echo "Use Debian 12 (Bookworm) or Debian 13 (Trixie) as the build host." >&2
     exit 1
 fi
 command -v lb >/dev/null 2>&1 || {
@@ -48,3 +48,4 @@ fi
 output="${LB_OUTPUT:-$ROOT/build/nova-os-amd64.iso}"
 mv -- "$iso" "$output"
 printf 'Built ISO: %s\n' "$output"
+
