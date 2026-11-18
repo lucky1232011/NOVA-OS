@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Install NOVA OS
+Comment=Install this live system to a disk
+Exec=pkexec calamares
+Icon=calamares
+Terminal=false
+Categories=System;

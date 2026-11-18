@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x2=".9" y2="1"><stop stop-color="#070d19"/><stop offset=".55" stop-color="#101b32"/><stop offset="1" stop-color="#090d18"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#1de4d2" stop-opacity=".34"/><stop offset="1" stop-color="#1de4d2" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ring"><stop stop-color="#23e9dc" stop-opacity=".06"/><stop offset=".55" stop-color="#39bbff" stop-opacity=".9"/><stop offset="1" stop-color="#ad81ff" stop-opacity=".12"/></linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <ellipse cx="1280" cy="540" rx="620" ry="570" fill="url(#glow)"/>
+  <g fill="none" stroke="url(#ring)"><circle cx="1280" cy="540" r="330" stroke-width="2"/><circle cx="1280" cy="540" r="405" stroke-width="1" opacity=".55"/><circle cx="1280" cy="540" r="480" stroke-width="1" opacity=".3"/></g>
+  <path d="M1080 665 1267 315h56l190 350h-91l-46-92h-161l-46 92zm168-166h92l-47-95z" fill="#d7f8ff" opacity=".88"/>
+  <g fill="#7c9db8" opacity=".65"><circle cx="222" cy="195" r="2"/><circle cx="546" cy="323" r="1.5"/><circle cx="878" cy="170" r="2"/><circle cx="1650" cy="180" r="2"/><circle cx="1758" cy="800" r="1.5"/><circle cx="914" cy="845" r="1.4"/><circle cx="370" cy="760" r="1.6"/></g>
+  <g fill="#ddfaff" font-family="Inter, sans-serif"><text x="128" y="454" font-size="18" letter-spacing="8" opacity=".62">NOVA SYSTEMS / PERSONAL COMPUTING</text><text x="122" y="540" font-size="64" font-weight="600" letter-spacing="4">NOVA</text><text x="128" y="583" font-size="16" letter-spacing="5" opacity=".62">A QUIETER KIND OF INFINITE</text></g>
+  <path d="M128 619h310" stroke="#27dccc" opacity=".7"/><text x="128" y="655" fill="#8aa3bd" font-family="Inter, sans-serif" font-size="13" letter-spacing="2">SYSTEM READY  ·  ALL SYSTEMS NOMINAL</text>
+</svg>

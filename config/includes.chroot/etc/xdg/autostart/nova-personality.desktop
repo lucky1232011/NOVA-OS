@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=NOVA Personality
+Comment=One harmless local NOVA Easter egg after an hour
+Exec=/usr/local/bin/nova-personality.py
+OnlyShowIn=XFCE;
+Terminal=false
+X-GNOME-Autostart-enabled=true

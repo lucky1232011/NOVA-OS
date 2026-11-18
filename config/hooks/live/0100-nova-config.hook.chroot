@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+
+# Ensure the regular live user can use sudo without a password prompt.
+if ! getent group sudo >/dev/null; then
+    groupadd --system sudo
+fi
+cat > /etc/sudoers.d/99-live-nova <<'EOF'
+%sudo ALL=(ALL:ALL) NOPASSWD: ALL
+EOF
+chmod 0440 /etc/sudoers.d/99-live-nova
+visudo -cf /etc/sudoers.d/99-live-nova
+chmod 0755 /etc/skel/Desktop/NOVA-Installer.desktop
+
+# Enable the display manager and NetworkManager for the live session.
+systemctl enable lightdm.service
+systemctl enable NetworkManager.service
