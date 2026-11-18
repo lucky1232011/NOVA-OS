@@ -4,10 +4,6 @@ set -eu
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cd "$ROOT"
 
-if [ "$(id -u)" -eq 0 ]; then
-    echo "Run as a normal user with sudo access; live-build will request privilege as needed." >&2
-    exit 1
-fi
 if [ ! -r /etc/os-release ]; then
     echo "Cannot identify the build distribution." >&2
     exit 1
@@ -24,8 +20,16 @@ command -v lb >/dev/null 2>&1 || {
 
 chmod +x "$ROOT/config/hooks/live/0100-nova-config.hook.chroot"
 
+run_lb() {
+    if [ "$(id -u)" -eq 0 ]; then
+        lb "$@"
+    else
+        sudo lb "$@"
+    fi
+}
+
 mkdir -p build
-lb config \
+run_lb config \
     --mode debian \
     --distribution bookworm \
     --architecture amd64 \
@@ -39,7 +43,7 @@ lb config \
     --image-name nova-os-amd64 \
     --build-with-chroot true
 
-lb build
+run_lb build
 iso=$(find "$ROOT" -maxdepth 1 -type f -name '*.iso' -print -quit)
 if [ -z "$iso" ]; then
     echo "live-build completed but no ISO was found in $ROOT" >&2
